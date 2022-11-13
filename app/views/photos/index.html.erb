@@ -1,0 +1,15 @@
+<%= form_for(@photo) do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :image_data %>
+      <%= f.hidden_field :image, value: @photo.cached_image_data %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
